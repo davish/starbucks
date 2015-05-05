@@ -1,5 +1,10 @@
+import java.util.Random;
+
 
 public class Customer {
+	
+	public Random ran = new Random();
+	
 	/** the amount the customer has paid in his lifetime */
 	public int totalPaid;
 	
@@ -9,12 +14,18 @@ public class Customer {
 	 * @return the product to be placed
 	 */
 	public Product placeOrder(Store s) {
-		return null;
+		
+		int order = ran.nextInt(s.menu.size());
+		Product p = s.menu.get(order);
+		totalPaid += p.price;
+		
+		s.processOrder(p);
+		
+		return p;
 	}
-
 	
 	public String toString() {
-		return null;
+		return totalPaid + "";
 	}
 
 }

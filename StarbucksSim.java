@@ -13,9 +13,9 @@ public class StarbucksSim {
 		for (int j = 0; j < rounds; j++) {
 			for (Customer c : customers) {
 				c.placeOrder(star);
-				System.out.println(c);
+				//System.out.println(c);
 			}
-			System.out.println(star);
+			System.out.println("Round number " + j + ": " + star);
 		}
 
 	}
