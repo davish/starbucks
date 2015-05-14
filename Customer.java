@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Random;
 
 
@@ -13,13 +14,14 @@ public class Customer {
 	 * add cost to totalPaid
 	 * @return the product to be placed
 	 */
-	public Product placeOrder(Store s) {
+	public Product placeOrder(Employee baristas) {
 		
-		int order = ran.nextInt(s.menu.size());
-		Product p = s.menu.get(order);
+		int order = ran.nextInt(baristas.placeOfEmployment.menu.size());
+	
+		Product p = baristas.placeOfEmployment.menu.get(order);
 		totalPaid += p.price;
 		
-		s.processOrder(p);
+		baristas.processOrder(p);
 		
 		return p;
 	}
