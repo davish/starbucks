@@ -6,3 +6,5 @@ Employees are happy when they are payed a certain amount of money and customers 
 The simulation returns the average of all profits made from wages for employees between $0 - $99 and a scatter plot of profit is in the notebook. 
 
 After intense data analysis, the most profitable wage for employees is $22 per day. 
+
+![graph](https://raw.githubusercontent.com/dbh937/starbucks/master/image.png)
