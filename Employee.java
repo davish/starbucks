@@ -17,19 +17,21 @@ public class Employee {
 //		System.out.println("My bank account has "+wallet);
 		wallet = wallet + wage;
 		placeOfEmployment.bank = placeOfEmployment.bank - wage;
+		wallet -= Math.random() * (wallet/10); // they spend a random amount of money every week, up to all of it
+		determineHappiness();
 	}
 	
 	void determineHappiness() {
-		if (wallet > threshold + 75) happiness = 6;
-		else if (wallet > threshold + 25) happiness = 5;
-		else if (wallet > threshold) happiness = 4;
-		else if (wallet > threshold - 25) happiness = 3;
-		else if (wallet > threshold - 75) happiness = 2;
-		else happiness = 1;
+		if (wallet > threshold + 75) happiness = 5;
+		else if (wallet > threshold + 25) happiness = 4;
+		else if (wallet > threshold) happiness = 3;
+		else if (wallet > threshold - 25) happiness = 2;
+		else if (wallet > threshold - 75) happiness = 1;
+		else happiness = 0;
 	}
 	
 	boolean processOrder(Product p) {
-		if (happiness / 5 >= Math.random()) {
+		if ((double)happiness / 5 >= Math.random()) {
 			placeOfEmployment.processOrder(p);
 			return true;
 		} else {
