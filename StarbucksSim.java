@@ -4,32 +4,38 @@ import java.util.Random;
 
 public class StarbucksSim {
 	public static void main(String[] args) {
-		while (true) {
-			Store star = new Store(100);
-			Random ran = new Random();
 
-			Customer[] customers = new Customer[100];
-			for (int i = 0; i < customers.length; i++) {
-				customers[i] = new Customer();
-			}
 
-			int rounds = 100;
-			double[] record = new double[rounds];
-			for (int j = 0; j < rounds; j++) {
-				star.payDay();
-				for (Customer c : customers) {
-					int b = ran.nextInt(star.baristas.size());
-					Employee barista = star.baristas.get(b);
+		for (int i = 0; i<100; i++) {
+			double sum = 0.00;
+			for (int k = 0; k<100; k++) {
+				Store star = new Store(100, i);
+				Random ran = new Random();
 
-					c.placeOrder(barista);
-					//System.out.println(c);
+				Customer[] customers = new Customer[100];
+				for (int j = 0; j < customers.length; j++) {
+					customers[j] = new Customer();
 				}
-				record[j] = star.bank;
-				System.out.println("Round number " + j + ": " + star);
-			}
-//			System.out.println(record[record.length-1]);
-//			System.out.println(star.orderHistory);
-		}
+
+				int rounds = 100;
+				for (int j = 0; j < rounds; j++) {
+					star.payDay();
+					for (Customer c : customers) {
+						int b = ran.nextInt(star.baristas.size());
+						Employee barista = star.baristas.get(b);
+
+						c.placeOrder(barista);
+						//System.out.println(c);
+					}
+					
+					//	System.out.println("Round number " + j + ": " + star);
+				}
+				sum = sum + star.bank;
+				//			System.out.println(star.orderHistory);
+			} //second for
+			System.out.println(sum/100.0);
+		} //first for
+
 
 	}
 }

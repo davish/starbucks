@@ -20,7 +20,7 @@ public class Store {
 	 * adds all the menu items
 	 * @param bank amount of $$ the starbucks starts with.
 	 */
-	public Store(double bank) {
+	public Store(double bank, double w) {
 
 		this.bank = bank;
 		
@@ -44,8 +44,8 @@ public class Store {
 		menu.add(new Product(4.59, 2.80, "Skinny Vanilla Latte"));
 		menu.add(new Product(6.00, 9.00, "ORANGE MOCHA FRAPPACHINO!!!"));
 		
-		System.out.println("How much should you pay your employee?");
-		double w = new Scanner(System.in).nextDouble();
+	//	System.out.println("How much should you pay your employee?");
+
 		baristas.add(new Employee(w, this));
 //		baristas.add(new Employee( , this));
 
