@@ -1,6 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Store {
@@ -41,9 +42,11 @@ public class Store {
 		menu.add(new Product(4.59, 2.80, "Mocha"));
 		menu.add(new Product(4.79, 2.30, "Iced Caffe Mocha"));
 		menu.add(new Product(4.59, 2.80, "Skinny Vanilla Latte"));
-		menu.add(new Product(6.00, 5.90, "ORANGE MOCHA FRAPPACHINO!!!"));
+		menu.add(new Product(6.00, 9.00, "ORANGE MOCHA FRAPPACHINO!!!"));
 		
-		baristas.add(new Employee(20, this));
+		System.out.println("How much should you pay your employee?");
+		double w = new Scanner(System.in).nextDouble();
+		baristas.add(new Employee(w, this));
 //		baristas.add(new Employee( , this));
 
 	}
@@ -63,12 +66,8 @@ public class Store {
 	}
 	
 	public void payDay() {
-		
 		for(int i = 0; i < baristas.size(); i++) {
-			baristas.get(i).payDay();
-		
-			baristas.get(i).determineHappiness();
-		
+			baristas.get(i).payDay();		
 		}
 	}
  
