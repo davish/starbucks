@@ -1,6 +1,3 @@
-import java.util.List;
-
-
 public class Product {
 	/** the price of each size */
 	public double price;
@@ -11,18 +8,13 @@ public class Product {
 	/** the amount of this product ordered in total */
 	public double orderTotal; 
 	
-	public String toString() {
-		
-		
-		return null;
-		
+	public String toString() {	
+		return name;
 	}
 	
 	public Product(double price, double cost, String name) {
-		
 		this.name = name;
 		this.price = price;
 		this.cost = cost;
-		
 	}
 }
